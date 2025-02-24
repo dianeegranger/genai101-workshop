@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3a5f0b; /* Crocodile green */
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #fact {
+            margin-top: 20px;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crocodile Fun Facts</h1>
+    <button onclick="showFact()">Show Crocodile Fact</button>
+    <div id="fact"></div>
+
+    <script>
+        const facts = [
+            "Crocodiles have been around for over 200 million years, making them one of the oldest living species.",
+            "They can hold their breath underwater for up to an hour.",
+            "Crocodiles have a powerful bite, with a force of up to 3,700 pounds per square inch.",
+            "They can replace each of their 80 teeth up to 50 times in their lifetime.",
+            "Crocodiles are excellent swimmers and can reach speeds of up to 20 miles per hour in water.",
+            "They have a special valve in their throat that allows them to open their mouths underwater without drowning.",
+            "Crocodiles communicate with each other through vocalizations, including growls, hisses, and roars.",
+            "They have a highly developed sense of smell, which helps them locate prey.",
+            "Crocodiles are known to use tools; they balance sticks on their snouts to lure birds looking for nesting material.",
+            "The temperature of the nest determines the sex of the hatchlings: cooler temperatures produce females, while warmer temperatures produce males."
+        ];
+
+        function showFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factElement = document.getElementById('fact');
+            factElement.style.opacity = 0;
+            setTimeout(() => {
+                factElement.textContent = facts[randomIndex];
+                factElement.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
